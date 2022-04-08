@@ -29,6 +29,13 @@ namespace Test.Controllers
             return this.Content("hello world");
         }
 
+        [HttpPut]
+        public ContentResult SayHello([FromForm] string hello)
+        {
+            var ss = hello;
+            return this.Content("ok");
+        }
+
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
