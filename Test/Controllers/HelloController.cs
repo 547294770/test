@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Test.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class HelloController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -30,7 +30,7 @@ namespace Test.Controllers
         }
 
         [HttpPut]
-        public ContentResult SayHello([FromForm] string hello)
+        public ContentResult SetHello([FromForm] string hello)
         {
             var ss = hello;
             return this.Content("ok");
